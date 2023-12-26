@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>calculator using javascript
+        </title>
+        <style type="text/css">
+    .container{
+    height:100%;
+    width:100%;
+    display: flex;
+    align-items: center;
+     justify-content: center;
+   
+}
+.subcontainer{
+    height:520px;
+    width:350px;
+    background-color:rgb(84, 85, 82);
+    border-radius: 20px;
+}
+.display input{
+    width:200px;
+     padding: 50px;
+     margin:15px;
+     margin-left: 30px;
+     border-radius:20px;
+     border: none;
+     outline: none;
+     text-align: right;
+     box-shadow: inset 1px 1px -2px;
+     color:blue;
+ }
+ ::placeholder{
+    color: blue;
+ }
+ button{
+     height:60px;
+     width:60px;
+     margin:5px;
+     border-radius: 20px;
+     outline: none;
+     box-shadow:1px -1px 5px;
+     border: none;
+     cursor: pointer;
+     background: transparent;
+     margin-left: 15px;
+     color: aqua;
+     font-size: 20px;
+ }
+
+ .equal{
+     width:130px;
+    background-color: chocolate;
+    color:white;
+    box-shadow: none;
+    font-size: 20px;
+ }
+ .operator{
+    color:rgb(1, 212, 1);
+    box-shadow:1px 1px 2px rgba(0,0,0,0.9);
+    font-size: 20px;
+    
+
+    
+ }
+ </style>
+    </head>
+    <div class="container">
+        <div class="subcontainer">
+            <div class="display">
+                <input type="text" placeholder="0" id="number">
+            </div>
+            <button class="button operator"onclick="clr('AC')">AC</button>
+            <button class="button operator" onclick="del('DEL')">DEL</button>
+            <button class="button operator"onclick="display('%')">%</button>
+            <button class="button operator"onclick="display('/')">/</button>
+            <button onclick="display('9')">9</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('7')">7</button>
+            <button class="button operator"onclick="display('*')">*</button>
+            <button onclick="display('6')">6</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('4')">4</button>
+            <button class="button operator"onclick="display('+')">+</button>
+            <button onclick="display('3')">3</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('1')">1</button>
+            <button class="button operator" onclick="display('-')">-</button>
+            <button onclick="display('0')">0</button>
+            <button onclick="display('.')">.</buttononclick="display('.')">
+            <button class='button equal' onclick="equal('=')">=</button >
+     </div>
+    </div>
+    <script>
+        let result=document.getElementById('number');
+function display(number)
+{
+ result.value +=number;
+}
+function clr(){
+    result.value="";
+}
+function del(){
+    result.value=result.value.slice(0,-1);
+}
+function equal(){
+    try{
+        result.value=eval(result.value);
+    }
+    catch{
+        result.value="error"
+    }
+  
+}
+
+
+    </script>
+   </html>
